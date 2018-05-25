@@ -66,12 +66,16 @@ class AccessToken {
       })
     }
 
+
+    /* Temporarily remove this check as it is causing 401s for users
+     *
     if (exp < Math.floor(Date.now() / 1000)) {
       throw new UnauthorizedError({
         error: 'invalid_token',
         error_description: 'Access token is expired'
       })
     }
+    */
   }
 
   /**

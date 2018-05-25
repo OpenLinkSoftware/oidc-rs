@@ -886,6 +886,8 @@ describe('AuthenticatedRequest', () => {
       sinon.spy(request, 'unauthorized')
     })
 
+    /* Temporarily remove this check as it is causing 401s for users
+     *
     describe('with expired token', () => {
       it('should throw a 401 error', done => {
         request.credential.jwt.payload.exp = Math.floor(Date.now() / 1000) - 100
@@ -913,6 +915,7 @@ describe('AuthenticatedRequest', () => {
         }
       })
     })
+    */
 
     describe('with valid exp', () => {
       it('should resolve its argument', () => {
